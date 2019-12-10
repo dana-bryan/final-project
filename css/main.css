@@ -19,9 +19,16 @@ body {
   margin: 0;
   color: #000;
 }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 .sidenav {
   height: 100%; /*Full-height: remove this if you want "auto" height */
-  width: 160px; /* Set the width of the sidebar */
+  width: 150px; /* Set the width of the sidebar */
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
@@ -37,12 +44,17 @@ body {
   color: #818181;
   display: block;
 }
-.sidenav a:hover {
+
+.sidenav a:active {
   color: #f1f1f1;
 }
 
+.current a:active {
+  color: #818181;
+}
+
 section {
-  margin-left: 160px; /* Same as the width of the sidebar */
+  margin-left: 150px; /* Same as the width of the sidebar */
   padding: 0px 10px;
 }
 
@@ -75,6 +87,8 @@ h1 {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  transform: perspective(600px) rotateX(0deg) rotateY(-3deg);
+  box-shadow: 10px 10px 5px #e0dbcc;
 }
 
 /*book covers(the images)*/
@@ -110,6 +124,35 @@ h1 {
 #hate {
   background-image: url('../images/hate.jpg');
 }
+/*more books*/
+#train {
+  background-image: url('../images/girltrain.jpg');
+}
+#cabin {
+  background-image: url('../images/cabin.jpg');
+}
+#lisey {
+  background-image: url('../images/lisey.jpg');
+}
+#second {
+  background-image: url('../images/second.jpg');
+}
+#boys {
+  background-image: url('../images/boys.jpg');
+}
+#beautiful {
+  background-image: url('../images/beautiful.jpg');
+}
+#treasure {
+    background-image: url('../images/treasure.jpg');
+}
+#maze {
+    background-image: url('../images/maze.jpg');
+}
+#tellyou {
+  background-image: url('../images/tellyou.jpg');
+
+}
 
 /*For the modal or pop-up*/
 .bg-modal {
@@ -118,9 +161,11 @@ h1 {
 	height: 100%;
 	position: absolute;
 	top: 0;
-	display: none;
+  display: flex;
 	justify-content: center;
 	align-items: center;
+  padding: 0.5rem;
+  z-index: 3;
 }
 
 .modal-contents {
@@ -128,9 +173,12 @@ h1 {
 	width: 500px;
 	background-color: white;
 	text-align: center;
-	padding: 20px;
+	padding: 2rem;
 	position: relative;
 	border-radius: 4px;
+  top: 25%;
+  margin: 0 auto;
+  overflow-x: hidden;
 }
 
 .close {
@@ -143,20 +191,98 @@ h1 {
 	cursor: pointer;
 }
 /*end of pop-up*/
-
-footer {
-  text-align: center;
-  color: #000;
+.genres {
+  font-size: 150%;
   padding: 1rem;
 }
-/*media queries- must do for nav bar and containers too;
-@media screen and (max-width: 700px) {
-  .sidenav a {
+footer {
+  padding: 0.5rem;
+  width: 100%;
+  background: #cae0d0;
+  color: #000;
+  text-align: center;
+}
+
+
+/*media queries */
+@media screen and (max-width: 905px) {
+  .book {
+    margin: 1rem;
   }
 }
 
-@media screen and (max-width: 400px) {
-  .sidenav a {
+@media screen and (max-width: 700px) {
+  .sidenav {
+    width: 120px; /* Set the width of the sidebar */
+  }
+  .row {
+    padding-right: 1rem;
+  }
+  h1 {
+    padding-left: 10rem;
+ }
+  .forAges {
+   text-align: center;
+   padding-top: 1rem;
+   font-size: 125%;
+   text-decoration: underline;
+ }
+ .genres {
+  text-align: center;
+  padding-top: 1rem;
+  font-size: 125%;
+  text-decoration: underline;
+}
+  section {
+   margin-left: 120px; /* Same as the width of the sidebar */
+   padding: 0;
+ }
+}
+
+@media screen and (max-width: 660px) {
+  .bg-modal {
+    background: none;
+  }
+  .modal-contents {
+    height: 350px;
+  	width: 350px;
+    border-radius: 20px;
+    border: 1px solid #CCC;
   }
 }
-*/
+
+@media screen and (max-width: 550px) {
+  h1 {
+    margin: 1rem auto;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  h1 {
+    padding-right: 1rem;
+  }
+
+ .genres {
+    text-align: left;
+    padding-right: 1.5rem;
+    margin: 0;
+  }
+  .sidenav {
+    background: #9bc9ae;
+    height: 100%;
+    padding: 1rem;
+    margin: 0;
+  }
+  .book {
+    transform: none;
+    box-shadow: none;
+  }
+  .modal-contents {
+    height: 300px;
+    width: 290px;
+    right: 8%;
+  }
+  .row {
+    padding: 1rem;
+  }
+}
